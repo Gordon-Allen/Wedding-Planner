@@ -6,24 +6,24 @@
         <form asp-action="register" asp-controller="Home" method="POST">
             <table class="table">
                 <tr>
-                    <td>First Name <br><span asp-validation-for="FirstName"></span></td>
+                    <td>First Name <br><span asp-validation-for="FirstName" style="color: red;"></span></td>
                     <td><input type="text" asp-for="FirstName"></td>
                 </tr>
                  <tr>
-                    <td>Last Name <br><span asp-validation-for="LastName"></span></td>
+                    <td>Last Name <br><span asp-validation-for="LastName" style="color: red;"></span></td>
                     <td><input type="text" asp-for="LastName"></td>
                 </tr>
                 <tr>
-                    <td>Email <br><span asp-validation-for="Email"></span></td>
+                    <td>Email <br><span asp-validation-for="Email" style="color: red;"></span></td>
                     <td><input type="text" asp-for="Email"></td>
                 </tr>
                 <tr>
-                    <td>Password <br><span asp-validation-for="Password"></span></td>
+                    <td>Password <br><span asp-validation-for="Password" style="color: red;"></span></td>
                     <td><input type="password" asp-for="Password"></td>
                 </tr>
                 <tr>
                     <td>Confirm Password </td>
-                    <td><input type="password" asp-for="ConfirmPassword"></td>
+                    <td><input type="password" asp-for="ConfirmPassword" style="color: red;"></td>
                 </tr>
             </table>
             
