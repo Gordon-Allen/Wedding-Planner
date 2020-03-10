@@ -14,7 +14,7 @@ namespace WeddingPlanner.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("WeddingPlanner.Models.User", b =>
@@ -22,7 +22,7 @@ namespace WeddingPlanner.Migrations
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Created_at");
+                    b.Property<DateTime>("Created_At");
 
                     b.Property<string>("Email")
                         .IsRequired();
@@ -36,29 +36,29 @@ namespace WeddingPlanner.Migrations
                     b.Property<string>("Password")
                         .IsRequired();
 
-                    b.Property<DateTime>("Updated_at");
+                    b.Property<DateTime>("Updated_At");
 
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("WeddingPlanner.Models.WedConnect", b =>
+            modelBuilder.Entity("WeddingPlanner.Models.UserWeddingViewModel", b =>
                 {
-                    b.Property<int>("WedConnectId")
+                    b.Property<int>("UserWeddingViewModelId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("UserId");
 
                     b.Property<int>("WeddingId");
 
-                    b.HasKey("WedConnectId");
+                    b.HasKey("UserWeddingViewModelId");
 
                     b.HasIndex("UserId");
 
                     b.HasIndex("WeddingId");
 
-                    b.ToTable("WedConnects");
+                    b.ToTable("UserWeddingViewModels");
                 });
 
             modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
@@ -66,37 +66,37 @@ namespace WeddingPlanner.Migrations
                     b.Property<int>("WeddingId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Created_at");
+                    b.Property<DateTime>("Created_At");
 
-                    b.Property<DateTime>("Updated_at");
+                    b.Property<DateTime>("Updated_At");
 
                     b.Property<int>("UserId");
 
-                    b.Property<string>("WedAddress")
+                    b.Property<string>("WedderOne")
                         .IsRequired();
 
-                    b.Property<DateTime>("WedDate");
-
-                    b.Property<string>("WedOne")
+                    b.Property<string>("WedderTwo")
                         .IsRequired();
 
-                    b.Property<string>("WedTwo")
+                    b.Property<string>("WeddingAddress")
                         .IsRequired();
+
+                    b.Property<DateTime>("WeddingDate");
 
                     b.HasKey("WeddingId");
 
                     b.ToTable("Weddings");
                 });
 
-            modelBuilder.Entity("WeddingPlanner.Models.WedConnect", b =>
+            modelBuilder.Entity("WeddingPlanner.Models.UserWeddingViewModel", b =>
                 {
                     b.HasOne("WeddingPlanner.Models.User", "User")
-                        .WithMany("UsertoWed")
+                        .WithMany("UsertoWedding")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("WeddingPlanner.Models.Wedding", "Wedding")
-                        .WithMany("WedtoUser")
+                        .WithMany("WeddingtoUser")
                         .HasForeignKey("WeddingId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

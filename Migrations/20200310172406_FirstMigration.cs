@@ -18,8 +18,8 @@ namespace WeddingPlanner.Migrations
                     LastName = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
                     Password = table.Column<string>(nullable: false),
-                    Created_at = table.Column<DateTime>(nullable: false),
-                    Updated_at = table.Column<DateTime>(nullable: false)
+                    Created_At = table.Column<DateTime>(nullable: false),
+                    Updated_At = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -32,13 +32,13 @@ namespace WeddingPlanner.Migrations
                 {
                     WeddingId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    WedOne = table.Column<string>(nullable: false),
-                    WedTwo = table.Column<string>(nullable: false),
-                    WedDate = table.Column<DateTime>(nullable: false),
-                    WedAddress = table.Column<string>(nullable: false),
+                    WedderOne = table.Column<string>(nullable: false),
+                    WedderTwo = table.Column<string>(nullable: false),
+                    WeddingDate = table.Column<DateTime>(nullable: false),
+                    WeddingAddress = table.Column<string>(nullable: false),
                     UserId = table.Column<int>(nullable: false),
-                    Created_at = table.Column<DateTime>(nullable: false),
-                    Updated_at = table.Column<DateTime>(nullable: false)
+                    Created_At = table.Column<DateTime>(nullable: false),
+                    Updated_At = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -46,25 +46,25 @@ namespace WeddingPlanner.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "WedConnects",
+                name: "UserWeddingViewModels",
                 columns: table => new
                 {
-                    WedConnectId = table.Column<int>(nullable: false)
+                    UserWeddingViewModelId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(nullable: false),
                     WeddingId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WedConnects", x => x.WedConnectId);
+                    table.PrimaryKey("PK_UserWeddingViewModels", x => x.UserWeddingViewModelId);
                     table.ForeignKey(
-                        name: "FK_WedConnects_Users_UserId",
+                        name: "FK_UserWeddingViewModels_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_WedConnects_Weddings_WeddingId",
+                        name: "FK_UserWeddingViewModels_Weddings_WeddingId",
                         column: x => x.WeddingId,
                         principalTable: "Weddings",
                         principalColumn: "WeddingId",
@@ -72,20 +72,20 @@ namespace WeddingPlanner.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_WedConnects_UserId",
-                table: "WedConnects",
+                name: "IX_UserWeddingViewModels_UserId",
+                table: "UserWeddingViewModels",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WedConnects_WeddingId",
-                table: "WedConnects",
+                name: "IX_UserWeddingViewModels_WeddingId",
+                table: "UserWeddingViewModels",
                 column: "WeddingId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "WedConnects");
+                name: "UserWeddingViewModels");
 
             migrationBuilder.DropTable(
                 name: "Users");

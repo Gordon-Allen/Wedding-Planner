@@ -12,34 +12,34 @@ namespace WeddingPlanner.Models
         [Key]
         public int UserId { get; set; }
         [Required]
-        [MinLength(2, ErrorMessage = "First name has to be atleast 2 characters!")]
+        [MinLength(2, ErrorMessage = "Your 'First Name' has to be at least (2) characters in length")]
         public string FirstName { get; set; }
 
         [Required]
-        [MinLength(2, ErrorMessage = "Last name has to be atleast 2 characters!")]
+        [MinLength(2, ErrorMessage = "Your 'Last Name' has to be at least (2) characters in length")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Please enter correct email or change other email!")]
+        [Required(ErrorMessage = "Please enter a properly formatted email address or register under a different email")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [MinLength(8, ErrorMessage = "Password has to be atleast 2 characters!")]
+        [MinLength(8, ErrorMessage = "Your 'Password' has to be at least (2) characters in length")]
         public string Password { get; set; }
-        public DateTime Created_at { get; set; } = DateTime.Now;
-        public DateTime Updated_at { get; set; } = DateTime.Now;
+        public DateTime Created_At { get; set; } = DateTime.Now;
+        public DateTime Updated_At { get; set; } = DateTime.Now;
 
         [NotMapped]
         [Compare("Password")]
         [DataType(DataType.Password)]
-        public string ConfirmPw { get; set; }
+        public string ConfirmPassword { get; set; }
 
-        public List<WedConnect> UsertoWed { get; set; }
+        public List<UserWeddingViewModel> UsertoWedding { get; set; }
     }
     public class LoginUser
     {
-        [Required(ErrorMessage = "Please enter correct email!")]
+        [Required(ErrorMessage = "Please enter your correct profile email address")]
         [EmailAddress]
         public string LoginEmail { get; set; }
 
@@ -53,24 +53,24 @@ namespace WeddingPlanner.Models
         [Key]
         public int WeddingId { get; set; }
         [Required]
-        public string WedOne { get; set; }
+        public string WedderOne { get; set; }
         [Required]
-        public string WedTwo { get; set; }
+        public string WedderTwo { get; set; }
         [Required]
-        public DateTime WedDate { get; set; }
+        public DateTime WeddingDate { get; set; }
         [Required]
-        public string WedAddress { get; set; }
+        public string WeddingAddress { get; set; }
         public int UserId {get; set;}
 
-        public DateTime Created_at { get; set; } = DateTime.Now;
-        public DateTime Updated_at { get; set; } = DateTime.Now;
-        public List<WedConnect> WedtoUser { get; set; }
+        public DateTime Created_At { get; set; } = DateTime.Now;
+        public DateTime Updated_At { get; set; } = DateTime.Now;
+        public List<UserWeddingViewModel> WeddingtoUser { get; set; }
     }
 
-    public class WedConnect
+    public class UserWeddingViewModel
     {
         [Key]
-        public int WedConnectId { get; set; }
+        public int UserWeddingViewModelId { get; set; }
         public int UserId { get; set; }
         public int WeddingId { get; set; }
         public User User { get; set; }

@@ -1,8 +1,8 @@
-@model WedConnect
+@model UserWeddingViewModel
 <h1> Welcome to the Wedding Planner!</h1>
 <a href="/logout">Logout</a>
 
-<a>@ViewBag.samedayrs</a>
+<a>@ViewBag.sameDayWedding</a>
 
 <table class="table">
     <thead class="thead-dark">
@@ -16,20 +16,20 @@
     <tbody>
         @foreach(var i in ViewBag.AllWed){
             <tr>
-                    <td><a href="/detail/@i.WeddingId">@i.WedOne & @i.WedTwo</a></td>
-                    <td>@i.WedDate</td>
-                    <td>@i.WedtoUser.Count</td>
-                    <td>@if(i.WedtoUser.Count == 0){
+                    <td><a href="/detail/@i.WeddingId">@i.WedderOne & @i.WedderTwo</a></td>
+                    <td>@i.WeddingDate</td>
+                    <td>@i.WeddingtoUser.Count</td>
+                    <td>@if(i.WeddingtoUser.Count == 0){
                             <a href="/addrsvp/@i.WeddingId/@ViewBag.Userid">RSVP</a>
                         }
-                        @if(i.WedtoUser.Count > 0)
+                        @if(i.WeddingtoUser.Count > 0)
                         {
                             int resert = 0;
                             bool rsvp = false;
-                            @foreach(var y in i.WedtoUser){
+                            @foreach(var y in i.WeddingtoUser){
                                 @if(y.UserId == ViewBag.Userid){
                                     rsvp = true;
-                                    resert = y.WedConnectId;
+                                    resert = y.UserWeddingViewModelId;
                                 }
                             }
                             @if(rsvp == true){

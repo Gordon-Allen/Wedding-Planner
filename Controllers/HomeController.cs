@@ -108,7 +108,7 @@ namespace WeddingPlanner.Controllers
 
                 ViewBag.Userid = HttpContext.Session.GetInt32("UserID");
                 ViewBag.AllWed = dbContext.Weddings
-                .Include(c => c.WedtoUser)
+                .Include(c => c.WeddingtoUser)
                 .ToList();
                 return View();
             }
@@ -150,19 +150,19 @@ namespace WeddingPlanner.Controllers
         public IActionResult DetailWed(int id)
         {
             Wedding a = dbContext.Weddings.FirstOrDefault(pro => pro.WeddingId == id);
-            ViewBag.Wedinfo = a;
+            ViewBag.WeddingInfo = a;
             var ListGuest = dbContext.Weddings
-            .Include(per => per.WedtoUser)
+            .Include(per => per.WeddingtoUser)
             .ThenInclude(x => x.User)
             .FirstOrDefault(y => y.WeddingId == id);
 
             ViewBag.ListGuest = ListGuest;
 
 
-            GoogleSigned.AssignAllServices(new GoogleSigned("PersonalGoogleAPIRemovedForSecurityPurposes"));
+            GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyD3jzdJw-BKW5dHpDFGSEJu0unE9DEytLI"));
 
             var request = new GeocodingRequest();
-            request.Address = a.WedAddress;
+            request.Address = a.WeddingAddress;
             var response = new GeocodingService().GetResponse(request);
 
             if (response.Status == ServiceResponseStatus.Ok && response.Results.Count() > 0)
@@ -187,20 +187,20 @@ namespace WeddingPlanner.Controllers
         [HttpGet]
         public IActionResult addrsvp(int wedid, int userid)
         {
-            Wedding newWed = dbContext.Weddings.Include(c => c.WedtoUser).ThenInclude(b => b.User).FirstOrDefault(wed => wed.WeddingId == wedid);
-            User newUser = dbContext.Users.Include(c => c.UsertoWed).ThenInclude(b => b.Wedding).FirstOrDefault(us => us.UserId == userid);
-            foreach (var thiswed in newUser.UsertoWed)
+            Wedding newWed = dbContext.Weddings.Include(c => c.WeddingtoUser).ThenInclude(b => b.User).FirstOrDefault(wed => wed.WeddingId == wedid);
+            User newUser = dbContext.Users.Include(c => c.UsertoWedding).ThenInclude(b => b.Wedding).FirstOrDefault(us => us.UserId == userid);
+            foreach (var thiswed in newUser.UsertoWedding)
             {
-                if (thiswed.Wedding.WedDate.Date == newWed.WedDate.Date)
+                if (thiswed.Wedding.WeddingDate.Date == newWed.WeddingDate.Date)
                 {
-                    ModelState.AddModelError("WedDate", "You have plan to go to another wedding on that day already!!!");
-                    ViewBag.samedayrs = "You have plan to go to another wedding on that day already!!!";
+                    ModelState.AddModelError("WeddingDate", "You have plan to go to another wedding on that day already!!!");
+                    ViewBag.sameDayWedding = "You have plan to go to another wedding on that day already!!!";
                     return RedirectToAction("Dashboard");
                 }
             }
 
 
-            WedConnect a = new WedConnect();
+            UserWeddingViewModel a = new UserWeddingViewModel();
             a.WeddingId = wedid;
             a.UserId = userid;
             dbContext.Add(a);
@@ -212,7 +212,7 @@ namespace WeddingPlanner.Controllers
         [HttpGet]
         public IActionResult unrsvp(int id)
         {
-            WedConnect a = dbContext.WedConnects.FirstOrDefault(web => web.WedConnectId == id);
+            UserWeddingViewModel a = dbContext.UserWeddingViewModels.FirstOrDefault(wed => wed.UserWeddingViewModelId == id);
             dbContext.Remove(a);
             dbContext.SaveChanges();
             return RedirectToAction("Dashboard");
@@ -222,7 +222,7 @@ namespace WeddingPlanner.Controllers
         [HttpGet]
         public IActionResult delete(int wedid)
         {
-            Wedding a = dbContext.Weddings.FirstOrDefault(web => web.WeddingId == wedid);
+            Wedding a = dbContext.Weddings.FirstOrDefault(wed => wed.WeddingId == wedid);
 
             dbContext.Remove(a);
             dbContext.SaveChanges();
