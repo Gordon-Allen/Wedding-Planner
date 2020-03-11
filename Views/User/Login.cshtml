@@ -1,6 +1,6 @@
 @model LoginUser
-        <h1>Login</h1>
-        <form class="form-inline" asp-action="Login" asp-controller="User" method="POST">
+        <h1 style="text-align: center; text-decoration-line: underline;">Already Have An Account?</h1>
+        <form asp-action="Login" asp-controller="User" method="POST">
 
             <table class="table">
                 <tr>
@@ -12,5 +12,5 @@
                     <td><input type="password" asp-for="LoginPassword"></td>
                 </tr>
             </table>
-            <input class="bt" type="submit" value="Login">
+            <input class="btn btn-primary" style="width: 215px; font-size:24px; margin: 0% 0% 5% 25%;" type="submit" value="Log In">
         </form>

@@ -28,10 +28,12 @@ namespace WeddingPlanner.Controllers
         {
             if (HttpContext.Session.GetString("Session") == null)
             {
+                ViewBag.IsLoggedIn = false;
                 return View("Index");
             }
             else
             {
+                ViewBag.IsLoggedIn = true;
                 return RedirectToAction("Dashboard");
             }
         }
