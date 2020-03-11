@@ -4,12 +4,15 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6" style="border: 7px solid rgb(255, 255, 255, 0.5); border-radius: 5px; margin-right: 50px; width: 450px; height: 500;">
-            <h2 style="text-decoration-line: underline;">Date/Time of Wedding:</h2>
+            <h2 style="text-decoration-line: underline;">Date/Time of Wedding</h2>
             <ul>
                 <li>@ViewBag.WeddingInfo.WeddingDate</li>
             </ul>
-            <div class="twocolumn">
-                <h2 style="text-decoration-line: underline;">Guest List:</h2>
+            <h2 style="text-decoration-line: underline;">Wedding Address</h2>
+            <ul>
+                <li>@ViewBag.WeddingInfo.WeddingAddress</li>
+            </ul>
+                <h2 style="text-decoration-line: underline;">Guest List</h2>
                 <ul>
                     <li>(@ViewBag.ListGuest.WeddingtoUser.Count) RSVP's
                 <ul>
@@ -21,17 +24,12 @@
                 </ul>
                 </li>
                 </ul>
-                <h2 style="text-decoration-line: underline;">Wedding Address:</h2>
-                <ul>
-                    <li>@ViewBag.WeddingInfo.WeddingAddress</li>
-                </ul>
-            </div>
         </div>
         <div class="col-sm-6" style="border: 7px solid rgb(255, 255, 255, 0.5); border-radius: 5px; width: 650px; padding: 0px;">
             <div id="dvMap" style="height:500px; width:auto;"></div>
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
             <script type="text/javascript"
-                src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBw6WWFzdeI3KUGG3zQ5iIF6vAGKpS6J6s&callback=initMap"
+                src="https://maps.googleapis.com/maps/api/js?libraries=places&key=ENTERGOOGLEMAPSAPIKEYHERE&callback=initMap"
                 async defer></script>
             <script type="text/javascript">
                 function initMap() {

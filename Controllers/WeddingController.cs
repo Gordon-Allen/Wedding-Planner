@@ -68,8 +68,7 @@ namespace WeddingPlanner.Controllers
 
             ViewBag.ListGuest = ListGuest;
 
-
-            GoogleSigned.AssignAllServices(new GoogleSigned("AIzaSyBw6WWFzdeI3KUGG3zQ5iIF6vAGKpS6J6s"));
+            GoogleSigned.AssignAllServices(new GoogleSigned("ENTERGOOGLEMAPSAPIKEYHERE"));
 
             var request = new GeocodingRequest();
             request.Address = a.WeddingAddress;
