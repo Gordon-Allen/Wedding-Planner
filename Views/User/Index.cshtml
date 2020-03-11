@@ -1,0 +1,38 @@
+﻿@model User
+
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" style="border: 4px solid rgb(255, 255, 255, 0.5); border-radius: 3px; margin-right: 175px; width: 450px;">
+            <h1 style="text-align: center; text-decoration-line: underline;">New To The App?</h1>
+            <form asp-action="Register" asp-controller="User" method="POST">
+                <table class="table">
+                    <tr>
+                        <td>First Name <br><span asp-validation-for="FirstName" style="color: red;"></span></td>
+                        <td><input type="text" asp-for="FirstName"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name <br><span asp-validation-for="LastName" style="color: red;"></span></td>
+                        <td><input type="text" asp-for="LastName"></td>
+                    </tr>
+                    <tr>
+                        <td>Email <br><span asp-validation-for="Email" style="color: red;"></span></td>
+                        <td><input type="text" asp-for="Email"></td>
+                    </tr>
+                    <tr>
+                        <td>Password <br><span asp-validation-for="Password" style="color: red;"></span></td>
+                        <td><input type="password" asp-for="Password"></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password </td>
+                        <td><input type="password" asp-for="ConfirmPassword"></td>
+                    </tr>
+                </table>
+                <input class="btn btn-primary" style="width: 250px; font-size:24px; margin: 0% 0% 5% 20%;" type="submit" value="Create Your Account">
+            </form>
+        </div>
+        <div class="col-sm-6" style="border: 4px solid rgb(255, 255, 255, 0.5); border-radius: 3px; width: 450px;">
+            <partial name="Login"/>
+        </div>
+    </div>
+</div>

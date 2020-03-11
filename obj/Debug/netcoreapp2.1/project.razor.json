@@ -2877,18 +2877,8 @@
   "RootNamespace": "WeddingPlanner",
   "Documents": [
     {
-      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Home/Dashboard.cshtml",
-      "TargetPath": "Views\\Home\\Dashboard.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Home/DetailWed.cshtml",
-      "TargetPath": "Views\\Home\\DetailWed.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Home/Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/User/Dashboard.cshtml",
+      "TargetPath": "Views\\User\\Dashboard.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2897,8 +2887,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Home/NewWedding.cshtml",
-      "TargetPath": "Views\\Home\\NewWedding.cshtml",
+      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Wedding/NewWedding.cshtml",
+      "TargetPath": "Views\\Wedding\\NewWedding.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2907,18 +2897,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/User/Login.cshtml",
+      "TargetPath": "Views\\User\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Home/Login.cshtml",
-      "TargetPath": "Views\\Home\\Login.cshtml",
+      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/User/Index.cshtml",
+      "TargetPath": "Views\\User\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Wedding/DetailWed.cshtml",
+      "TargetPath": "Views\\Wedding\\DetailWed.cshtml",
       "FileKind": "mvc"
     }
   ],

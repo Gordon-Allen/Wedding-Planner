@@ -21,12 +21,12 @@
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/WeddingPlanner.csproj.CopyComplete
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/bin/Debug/netcoreapp2.1/appsettings.json
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/bin/Debug/netcoreapp2.1/Properties/launchSettings.json
-/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Home/Dashboard.cshtml.g.cs
-/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Home/DetailWed.cshtml.g.cs
-/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.cshtml.g.cs
-/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Home/Login.cshtml.g.cs
-/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Home/NewWedding.cshtml.g.cs
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Error.cshtml.g.cs
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/_ViewImports.cshtml.g.cs
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/_ViewStart.cshtml.g.cs
+/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/User/Dashboard.cshtml.g.cs
+/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Wedding/DetailWed.cshtml.g.cs
+/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Wedding/NewWedding.cshtml.g.cs
+/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/User/Index.cshtml.g.cs
+/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/User/Login.cshtml.g.cs

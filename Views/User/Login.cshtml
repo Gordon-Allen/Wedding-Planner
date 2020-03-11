@@ -1,0 +1,16 @@
+@model LoginUser
+        <h1 style="text-align: center; text-decoration-line: underline;">Already Have An Account?</h1>
+        <form asp-action="Login" asp-controller="User" method="POST">
+
+            <table class="table">
+                <tr>
+                    <td>Email <br><span asp-validation-for="LoginEmail" style="color: red;"></span></td>
+                    <td><input type="text" asp-for="LoginEmail"></td>
+                </tr>
+                <tr>
+                    <td>Password <br><span asp-validation-for="LoginPassword" style="color: red;"></span></td>
+                    <td><input type="password" asp-for="LoginPassword"></td>
+                </tr>
+            </table>
+            <input class="btn btn-primary" style="width: 215px; font-size:24px; margin: 0% 0% 5% 25%;" type="submit" value="Log In">
+        </form>

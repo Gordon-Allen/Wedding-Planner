@@ -1,0 +1,53 @@
+@model UserWeddingViewModel
+<h1 style="text-align: center; text-decoration-line:underline; font-weight: bolder;">Wedding Planner Community NewsFeed</h1>
+<br>
+<a asp-controller="Wedding" asp-action="NewWedding"><button type="button" class="btn btn-primary" style="width: 275px; font-size:23px; margin-left: 37.5%">Add A New Wedding</button></a>
+<br>
+<span>@ViewBag.sameDayWedding</span>
+<br>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Wedding</th>
+        <th scope="col">Date</th>
+        <th scope="col">RSVP's</th>
+        <th scope="col">Action(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+        @foreach(var i in ViewBag.AllWed){
+            <tr>
+                    <td><a asp-controller="Wedding" asp-action="DetailWed" asp-route-id="@i.WeddingId">@i.WedderOne & @i.WedderTwo</a></td>
+                    <td>@i.WeddingDate</td>
+                    <td>@i.WeddingtoUser.Count</td>
+                    <td>@if(i.WeddingtoUser.Count == 0){
+                            <a asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid">RSVP</a>
+                        }
+                        @if(i.WeddingtoUser.Count > 0)
+                        {
+                            int resert = 0;
+                            bool rsvp = false;
+                            @foreach(var y in i.WeddingtoUser){
+                                @if(y.UserId == ViewBag.Userid){
+                                    rsvp = true;
+                                    resert = y.UserWeddingViewModelId;
+                                }
+                            }
+                            @if(rsvp == true){
+                                <a asp-controller="UserWeddingViewModel" asp-action="UnRsvp" asp-route-id = "@resert">UN-RSVP</a>
+                            }
+                            @if(rsvp == false){
+                                <a asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid">RSVP</a>
+
+                            }
+                        }
+
+                    @if(ViewBag.Userid == @i.UserId){
+                        <a> | </a> <a asp-controller="Wedding" asp-action="DeleteWedding" asp-route-wedid = "@i.WeddingId">Delete</a>
+                    }
+                    </td>
+                  </tr>
+        }
+    </tbody>
+  </table>
+
