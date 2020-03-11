@@ -1,9 +1,9 @@
 @model Wedding
 
 <h1>Plan Your Wedding</h1>
-<a href="/Dashboard">Dashboard</a> | <a href="/logout">Logout</a>
+<a asp-controller="User" asp-action="Dashboard">Dashboard</a> | <a asp-controller="User" asp-action="Logout">Logout</a>
 <br><br>
-<form asp-action="btAddWed" asp-controller="Home" method="POST">
+<form asp-action="btAddWed" asp-controller="Wedding" method="POST">
     <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Wedder One</label>
         <br><span asp-validation-for="WedderOne"></span>

@@ -1,6 +1,6 @@
 @model UserWeddingViewModel
 <h1> Welcome to the Wedding Planner!</h1>
-<a href="/logout">Logout</a>
+<a asp-controller="User" asp-action="Logout">Logout</a>
 
 <a>@ViewBag.sameDayWedding</a>
 
@@ -16,11 +16,11 @@
     <tbody>
         @foreach(var i in ViewBag.AllWed){
             <tr>
-                    <td><a href="/detail/@i.WeddingId">@i.WedderOne & @i.WedderTwo</a></td>
+                    <td><a asp-controller="Wedding" asp-action="DetailWed" asp-route-id="@i.WeddingId">@i.WedderOne & @i.WedderTwo</a></td>
                     <td>@i.WeddingDate</td>
                     <td>@i.WeddingtoUser.Count</td>
                     <td>@if(i.WeddingtoUser.Count == 0){
-                            <a href="/addrsvp/@i.WeddingId/@ViewBag.Userid">RSVP</a>
+                            <a asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid">RSVP</a>
                         }
                         @if(i.WeddingtoUser.Count > 0)
                         {
@@ -33,15 +33,18 @@
                                 }
                             }
                             @if(rsvp == true){
-                                <a href="/unrsvp/@resert">Un-RSVP</a>
+                                <a href="UserWeddingViewModel/unrsvp/@resert">Un-RSVP</a>
+                                <a asp-controller="UserWeddingViewModel" asp-action="UnRsvp" asp-route-id = "@resert">UN-RSVP</a>
                             }
                             @if(rsvp == false){
-                                <a href="/addrsvp/@i.WeddingId/@ViewBag.Userid">RSVP</a>
+                                <a href="UserWeddingViewModel/addrsvp/@i.WeddingId/@ViewBag.Userid">RSVP</a>
+                                <a asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid">RSVP</a>
+
                             }
                         }
 
                     @if(ViewBag.Userid == @i.UserId){
-                        <a> | </a> <a href="/delete/@i.WeddingId">Delete</a>
+                        <a> | </a> <a asp-controller="Wedding" asp-action="DeleteWedding" asp-route-wedid = "@i.WeddingId">Delete</a>
                     }
                     </td>
                   </tr>
@@ -49,4 +52,4 @@
     </tbody>
   </table>
 
-  <a href="/newwedding"><button type="button" class="btn btn-primary">New Wedding</button></a>
+  <a asp-controller="Wedding" asp-action="NewWedding"><button type="button" class="btn btn-primary">New Wedding</button></a>
