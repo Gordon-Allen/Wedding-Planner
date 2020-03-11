@@ -1,6 +1,5 @@
 @model UserWeddingViewModel
 <h1> Welcome to the Wedding Planner!</h1>
-<a asp-controller="User" asp-action="Logout">Logout</a>
 
 <a>@ViewBag.sameDayWedding</a>
 
@@ -37,7 +36,6 @@
                                 <a asp-controller="UserWeddingViewModel" asp-action="UnRsvp" asp-route-id = "@resert">UN-RSVP</a>
                             }
                             @if(rsvp == false){
-                                <a href="UserWeddingViewModel/addrsvp/@i.WeddingId/@ViewBag.Userid">RSVP</a>
                                 <a asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid">RSVP</a>
 
                             }
