@@ -1,8 +1,10 @@
 @model UserWeddingViewModel
 <h1 style="text-align: center; text-decoration-line:underline; font-weight: bolder;">Wedding Planner Community NewsFeed</h1>
 <br>
-<a>@ViewBag.sameDayWedding</a>
-
+<a asp-controller="Wedding" asp-action="NewWedding"><button type="button" class="btn btn-primary" style="width: 275px; font-size:23px; margin-left: 37.5%">Add A New Wedding</button></a>
+<br>
+<span>@ViewBag.sameDayWedding</span>
+<br>
 <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -49,4 +51,3 @@
     </tbody>
   </table>
 
-  <a asp-controller="Wedding" asp-action="NewWedding"><button type="button" class="btn btn-primary" style="width: 200px; font-size:22px; margin-left: 21.5%">New Wedding</button></a>
