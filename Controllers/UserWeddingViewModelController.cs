@@ -35,11 +35,11 @@ namespace WeddingPlanner.Controllers
                 if (thiswed.Wedding.WeddingDate.Date == newWed.WeddingDate.Date)
                 {
                     ModelState.AddModelError("WeddingDate", "You have plan to go to another wedding on that day already!!!");
-                    ViewBag.sameDayWedding = "You have plan to go to another wedding on that day already!!!";
-                    return View("Dashboard", "User");
+                    ViewBag.sameDayWedding = true;
+                    return Redirect("/User/Dashboard");
                 }
             }
-
+            ViewBag.sameDayWedding = false;
             UserWeddingViewModel a = new UserWeddingViewModel();
             a.WeddingId = wedid;
             a.UserId = userid;

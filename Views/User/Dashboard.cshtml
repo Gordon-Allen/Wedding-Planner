@@ -1,7 +1,12 @@
 @model UserWeddingViewModel
 <h1 style="text-align: center; text-decoration-line:underline; font-weight: bolder; margin-bottom: 2%;">Community NewsFeed</h1>
 <a asp-controller="Wedding" asp-action="NewWedding"><button type="button" class="btn btn-primary" style="width: 275px; font-size:23px; margin-left: 38%">Add A New Wedding</button></a>
-<span>@ViewBag.sameDayWedding</span>
+
+@if(@ViewBag.sameDayWedding == true)
+{
+    <h3>You already are going to a wedding on the same day!</h3>
+}
+
 <br>
 <table class="table">
     <thead class="thead-dark">
