@@ -30,3 +30,4 @@
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Wedding/NewWedding.cshtml.g.cs
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/User/Index.cshtml.g.cs
 /Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/User/Login.cshtml.g.cs
+/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/obj/Debug/netcoreapp2.1/Razor/Views/Shared/Navbar.cshtml.g.cs
