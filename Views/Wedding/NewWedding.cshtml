@@ -1,43 +1,37 @@
 @model Wedding
 
 <h1 style="text-align: center; text-decoration-line:underline; font-weight: bolder;">So....Is Somebody 'Tying The Knot'?</h1>
-<br><br>
-<form asp-action="btAddWed" asp-controller="Wedding" method="POST">
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Wedder One</label>
-        <br><span asp-validation-for="WedderOne"></span>
-        <div class="col-sm-10">
-            <input asp-for="WedderOne" type="text" class="form-control" id="inputEmail3" placeholder="Jane Doe">
+<br>
+<form asp-action="btAddWed" asp-controller="Wedding" method="POST" class="form-horizontal needs-validation" novalidate style="margin-left: 17.5%">
+    <div class="form-group" style="margin-bottom: 4%;">
+        <div class="col-sm-5">
+            <label asp-for="WedderOne"></label>
+            <input type="text" class="form-control" asp-for="WedderOne" placeholder="Jane Doe">
+            <span asp-validation-for="WedderOne"></span>
+        </div>
+        <div class="col-sm-5">
+            <label asp-for="WedderTwo"></label>
+            <input type="text" class="form-control" asp-for="WedderTwo" placeholder="Jane Doe">
+            <span asp-validation-for="WedderTwo"></span>
         </div>
     </div>
-
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Wedder Two</label>
-        <br><span asp-validation-for="WedderTwo"></span>
-        <div class="col-sm-10">
-            <input asp-for="WedderTwo" type="text" class="form-control" id="inputEmail3" placeholder="John Doe">
+    <div class="form-group">
+        <div class="col-sm-5">
+            <label asp-for="WeddingDate"></label>
+            <input type="text" class="form-control" asp-for="WeddingDate" placeholder="XX/XX/2020 00:00 AM/PM">
+            <span asp-validation-for="WeddingDate"></span>
+        </div>
+        <div class="col-sm-5">
+            <label asp-for="WeddingAddress"></label>
+            <input type="text" class="form-control" asp-for="WeddingAddress" placeholder="1234 Memory Lane Chicago, IL 12345">
+            <span asp-validation-for="WeddingAddress"></span>
         </div>
     </div>
-
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Date</label>
-        <br><span asp-validation-for="WeddingDate"></span>
+    <div class="form-group">
         <div class="col-sm-10">
-            <input asp-for="WeddingDate" type="text" class="form-control selector" placeholder="XX/XX/2019 00:00 AM/PM">
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Wedding Address</label>
-        <br><span asp-validation-for="WeddingAddress"></span>
-        <div class="col-sm-10">
-            <input asp-for="WeddingAddress" type="text" class="form-control" id="inputEmail3" placeholder="1234 Memory Lane Chicago, IL 12345">
-        </div>
-        <input asp-for="UserId" type="hidden" value="@ViewBag.Userid">
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Create</button>
+            <br>
+            <input asp-for="UserId" type="hidden" value="@ViewBag.Userid">
+            <input type="submit" class="btn btn-primary" value="Create Wedding" style="width:250px; font-size:23px; margin-left: 32.5%">
         </div>
     </div>
 </form>
