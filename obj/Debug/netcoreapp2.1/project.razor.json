@@ -2882,11 +2882,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/User/Navbar.cshtml",
-      "TargetPath": "Views\\User\\Navbar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -2924,6 +2919,11 @@
     {
       "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Wedding/DetailWed.cshtml",
       "TargetPath": "Views\\Wedding\\DetailWed.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/Shared/Navbar.cshtml",
+      "TargetPath": "Views\\Shared\\Navbar.cshtml",
       "FileKind": "mvc"
     }
   ],
