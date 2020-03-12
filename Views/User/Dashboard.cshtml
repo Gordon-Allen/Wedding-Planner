@@ -2,27 +2,26 @@
 <h1 style="text-align: center; text-decoration-line:underline; font-weight: bolder;">Wedding Planner Community NewsFeed</h1>
 <br>
 <a asp-controller="Wedding" asp-action="NewWedding"><button type="button" class="btn btn-primary" style="width: 275px; font-size:23px; margin-left: 37.5%">Add A New Wedding</button></a>
-<br>
 <span>@ViewBag.sameDayWedding</span>
 <br>
 <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Wedding</th>
-        <th scope="col">Date</th>
-        <th scope="col">RSVP's</th>
-        <th scope="col">Action(s)</th>
+        <th scope="col"><h3>Wedding</h3></th>
+        <th scope="col"><h3>Date</h3></th>
+        <th scope="col"><h3>RSVP's</h3></th>
+        <th scope="col"><h3>Action(s)</h3></th>
       </tr>
     </thead>
     <tbody>
         @foreach(var i in ViewBag.AllWed){
             <tr>
-                    <td><a asp-controller="Wedding" asp-action="DetailWed" asp-route-id="@i.WeddingId">@i.WedderOne & @i.WedderTwo</a></td>
-                    <td>@i.WeddingDate</td>
-                    <td>@i.WeddingtoUser.Count</td>
+                    <td style="width:375px;"><a asp-controller="Wedding" asp-action="DetailWed" asp-route-id="@i.WeddingId" style="font-weight: 800;">@i.WedderOne & @i.WedderTwo</a></td>
+                    <td style="width:375px;">@i.WeddingDate</td>
+                    <td style="width:200px;">@i.WeddingtoUser.Count</td>
                     <td>@if(i.WeddingtoUser.Count == 0){
-                        <form asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid" method="GET">
-                            <input type="submit" class="btn btn-primary" value="RSVP">
+                        <form asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid" method="GET" style="display: inline-block;">
+                            <input type="submit" class="btn btn-primary" value="RSVP" style="display: inline-block;">
                         </form>
                         }
                         @if(i.WeddingtoUser.Count > 0)
@@ -36,20 +35,20 @@
                                 }
                             }
                             @if(rsvp == true){
-                                <form asp-controller="UserWeddingViewModel" asp-action="UnRsvp" asp-route-id = "@resert" method="GET">
-                                    <input type="submit" class="btn btn-primary" value="UN-RSVP">
+                                <form asp-controller="UserWeddingViewModel" asp-action="UnRsvp" asp-route-id = "@resert" method="GET" style="display: inline-block;">
+                                    <input type="submit" class="btn btn-primary" value="UN-RSVP" style="display: inline-block;">
                                 </form>
                             }
                             @if(rsvp == false){
-                                <form asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid" method="GET">
-                                    <input type="submit" class="btn btn-primary" value="RSVP">
+                                <form asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid" method="GET" style="display: inline-block;">
+                                    <input type="submit" class="btn btn-primary" value="RSVP" style="display: inline-block;">
                                 </form>
                             }
                         }
 
                     @if(ViewBag.Userid == @i.UserId){
-                        <form asp-controller="Wedding" asp-action="DeleteWedding" asp-route-wedid = "@i.WeddingId" method="GET">
-                            <input type="submit" class="btn btn-primary" value="Delete">
+                        <form asp-controller="Wedding" asp-action="DeleteWedding" asp-route-wedid = "@i.WeddingId" method="GET" style="display: inline-block;">
+                            <input type="submit" class="btn btn-primary" value="Delete" style="display: inline-block;">
                         </form>
                     }
                     </td>
