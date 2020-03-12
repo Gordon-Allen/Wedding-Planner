@@ -21,7 +21,9 @@
                     <td>@i.WeddingDate</td>
                     <td>@i.WeddingtoUser.Count</td>
                     <td>@if(i.WeddingtoUser.Count == 0){
-                            <a asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid">RSVP</a>
+                        <form asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid" method="GET">
+                            <input type="submit" class="btn btn-primary" value="RSVP">
+                        </form>
                         }
                         @if(i.WeddingtoUser.Count > 0)
                         {
@@ -34,16 +36,21 @@
                                 }
                             }
                             @if(rsvp == true){
-                                <a asp-controller="UserWeddingViewModel" asp-action="UnRsvp" asp-route-id = "@resert">UN-RSVP</a>
+                                <form asp-controller="UserWeddingViewModel" asp-action="UnRsvp" asp-route-id = "@resert" method="GET">
+                                    <input type="submit" class="btn btn-primary" value="UN-RSVP">
+                                </form>
                             }
                             @if(rsvp == false){
-                                <a asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid">RSVP</a>
-
+                                <form asp-controller="UserWeddingViewModel" asp-action="AddRsvp" asp-route-wedid = "@i.WeddingId" asp-route-userid = "@ViewBag.Userid" method="GET">
+                                    <input type="submit" class="btn btn-primary" value="RSVP">
+                                </form>
                             }
                         }
 
                     @if(ViewBag.Userid == @i.UserId){
-                        <a> | </a> <a asp-controller="Wedding" asp-action="DeleteWedding" asp-route-wedid = "@i.WeddingId">Delete</a>
+                        <form asp-controller="Wedding" asp-action="DeleteWedding" asp-route-wedid = "@i.WeddingId" method="GET">
+                            <input type="submit" class="btn btn-primary" value="Delete">
+                        </form>
                     }
                     </td>
                   </tr>

@@ -60,7 +60,7 @@ using WeddingPlanner.Models;
             WriteLiteral("<h1 style=\"text-align: center; text-decoration-line:underline; font-weight: bolder;\">Wedding Planner Community NewsFeed</h1>\n<br>\n");
             EndContext();
             BeginContext(158, 185, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f04c0fb5c98479a9a33ab9321142c05", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56531841e70d461fac770f83dced2bb5", async() => {
                 BeginContext(210, 129, true);
                 WriteLiteral("<button type=\"button\" class=\"btn btn-primary\" style=\"width: 275px; font-size:23px; margin-left: 37.5%\">Add A New Wedding</button>");
                 EndContext();
@@ -114,7 +114,7 @@ using WeddingPlanner.Models;
             WriteLiteral("            <tr>\n                    <td>");
             EndContext();
             BeginContext(722, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "080c71c142814f09bbf583250d88d9d4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "094fde6ebb1a475fbc6399efd6658f1f", async() => {
                 BeginContext(802, 11, false);
 #line 20 "/Users/gmanallen/Coding Dojo/c#/entity_framework/WeddingPlanner/Views/User/Dashboard.cshtml"
                                                                                                   Write(i.WedderOne);
@@ -193,7 +193,7 @@ using WeddingPlanner.Models;
             WriteLiteral("                            ");
             EndContext();
             BeginContext(1019, 140, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c156bef6e2b04ac986bc16d371c4aa39", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15d6711b75b941e7a75e049b974ce025", async() => {
                 BeginContext(1151, 4, true);
                 WriteLiteral("RSVP");
                 EndContext();
@@ -284,7 +284,7 @@ using WeddingPlanner.Models;
             WriteLiteral("                                ");
             EndContext();
             BeginContext(1750, 97, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c2d1d23bb24043a0aedf6cb8e8840ac9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0da16579f4841c8a9c178511dda0350", async() => {
                 BeginContext(1836, 7, true);
                 WriteLiteral("UN-RSVP");
                 EndContext();
@@ -334,7 +334,7 @@ using WeddingPlanner.Models;
             WriteLiteral("                                ");
             EndContext();
             BeginContext(1958, 140, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fba219fcd92a46658599ebb44469e015", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ce6cd8f184f4c0bbd88e7db67922832", async() => {
                 BeginContext(2090, 4, true);
                 WriteLiteral("RSVP");
                 EndContext();
@@ -403,7 +403,7 @@ using WeddingPlanner.Models;
             WriteLiteral("                        <a> | </a> ");
             EndContext();
             BeginContext(2246, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4949d683e1a4b108b869de1e4b3f8af", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cb6a781b5b440028fd17bce0248952f", async() => {
                 BeginContext(2334, 6, true);
                 WriteLiteral("Delete");
                 EndContext();
