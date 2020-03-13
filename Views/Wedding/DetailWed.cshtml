@@ -1,4 +1,4 @@
-<h1 style="text-align:center; text-decoration-line: underline; font-weight: bolder;">@ViewBag.WeddingInfo.WedderOne & @ViewBag.WeddingInfo.WedderTwo</h1>
+<h1 style="text-align:center; text-decoration-line: underline; font-weight: bolder;">@ViewBag.WeddingInfo.WedderOneFirstName @ViewBag.WeddingInfo.WedderOneLastName & @ViewBag.WeddingInfo.WedderTwoFirstName @ViewBag.WeddingInfo.WedderTwoLastName</h1>
 <br>
 
 <div class="container">
@@ -6,24 +6,25 @@
         <div class="col-sm-6" style="border: 7px solid rgb(255, 255, 255, 0.7); border-radius: 5px; margin-right: 50px; width: 450px; height: 500;">
             <h2 style="text-decoration-line: underline;">Date & Time of Wedding</h2>
             <ul>
-                <li>@ViewBag.WeddingInfo.WeddingDate.ToString("M/dd/yyyy h:mm tt")</li>
+                <li>@ViewBag.WeddingInfo.WeddingDate.ToString("MMMM dd, yyyy h:mm tt")</li>
             </ul>
             <h2 style="text-decoration-line: underline;">Wedding Address</h2>
             <ul>
-                <li>@ViewBag.WeddingInfo.WeddingAddress</li>
+                <li>@ViewBag.WeddingInfo.WeddingStreetAddress</li>
+                <li>@ViewBag.WeddingInfo.WeddingCity, @ViewBag.WeddingInfo.WeddingState @ViewBag.WeddingInfo.WeddingZipcode</li>
             </ul>
-                <h2 style="text-decoration-line: underline;">Guest List</h2>
-                <ul>
-                    <li>(@ViewBag.ListGuest.WeddingtoUser.Count) RSVP's
-                <ul>
-                    @foreach(var i in ViewBag.ListGuest.WeddingtoUser){
-                    <li>
-                        @i.User.FirstName @i.User.LastName
-                    </li>
-                    }
-                </ul>
+            <h2 style="text-decoration-line: underline;">Guest List</h2>
+            <ul>
+                <li>(@ViewBag.ListGuest.WeddingtoUser.Count) RSVP's
+                    <ul>
+                        @foreach(var i in ViewBag.ListGuest.WeddingtoUser){
+                        <li>
+                            @i.User.FirstName @i.User.LastName
+                        </li>
+                        }
+                    </ul>
                 </li>
-                </ul>
+            </ul>
         </div>
         <div class="col-sm-6" style="border: 7px solid rgb(255, 255, 255, 0.8); border-radius: 5px; width: 650px; padding: 0px;">
             <div id="dvMap" style="height:500px; width:auto;"></div>

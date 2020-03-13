@@ -70,8 +70,10 @@ namespace WeddingPlanner.Controllers
 
             GoogleSigned.AssignAllServices(new GoogleSigned("ENTER-GOOGLE-MAPS-API-KEY-HERE"));
 
+
+            var formattedWedAddress = a.WeddingStreetAddress + " " + a.WeddingCity + ", " + a.WeddingState + " " + a.WeddingZipcode;
             var request = new GeocodingRequest();
-            request.Address = a.WeddingAddress;
+            request.Address = formattedWedAddress;
             var response = new GeocodingService().GetResponse(request);
 
             if (response.Status == ServiceResponseStatus.Ok && response.Results.Count() > 0)

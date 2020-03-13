@@ -20,7 +20,7 @@
     <tbody>
         @foreach(var i in ViewBag.AllWed){
             <tr>
-                    <td style="width:375px;"><a asp-controller="Wedding" asp-action="DetailWed" asp-route-id="@i.WeddingId" style="font-weight: 800;">@i.WedderOne & @i.WedderTwo</a></td>
+                    <td style="width:375px;"><a asp-controller="Wedding" asp-action="DetailWed" asp-route-id="@i.WeddingId" style="font-weight: 800;">@i.WedderOneFirstName @i.WedderOneLastName & @i.WedderTwoFirstName @i.WedderTwoLastName</a></td>
                     <td style="width:375px;">@i.WeddingDate.ToString("M/dd/yyyy h:mm tt")</td>
                     <td style="width:200px;">@i.WeddingtoUser.Count</td>
                     <td>@if(i.WeddingtoUser.Count == 0){
