@@ -13,14 +13,19 @@ namespace WeddingPlanner.Models
         public int UserId { get; set; }
         [Required]
         [MinLength(2, ErrorMessage = "Your 'First Name' has to be at least (2) characters in length")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
         [MinLength(2, ErrorMessage = "Your 'Last Name' has to be at least (2) characters in length")]
+        [Display(Name = "Last Name")]
+
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Please enter a properly formatted email address or register under a different email")]
         [EmailAddress]
+        [Display(Name = "Email Address")]
+
         public string Email { get; set; }
 
         [Required]
@@ -33,6 +38,8 @@ namespace WeddingPlanner.Models
         [NotMapped]
         [Compare("Password")]
         [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
+
         public string ConfirmPassword { get; set; }
 
         public List<UserWeddingViewModel> UsertoWedding { get; set; }
@@ -41,10 +48,14 @@ namespace WeddingPlanner.Models
     {
         [Required(ErrorMessage = "Please enter your correct profile email address")]
         [EmailAddress]
+        [Display(Name = "Email")]
+
         public string LoginEmail { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+
         public string LoginPassword { get; set; }
     }
 
