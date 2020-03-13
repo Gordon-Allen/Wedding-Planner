@@ -3,7 +3,7 @@
 <h1 style="text-align: center; text-decoration-line:underline; font-weight: bolder;">So....Is Somebody 'Tying The Knot'?</h1>
 <br>
 <form asp-action="btAddWed" asp-controller="Wedding" method="POST" class="form-horizontal needs-validation" novalidate style="margin-left: 17.5%">
-    <div class="form-group" style="margin-bottom: 2%;">
+    <div class="form-group" style="margin-bottom: 1%;">
         <div class="col-sm-5">
             <label asp-for="WedderOneFirstName"></label>
             <input type="text" class="form-control" asp-for="WedderOneFirstName" placeholder="Jane">
@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div class="form-group" style="margin-bottom: 4%;">
+    <div class="form-group" style="margin-bottom: 1%;">
         <div class="col-sm-5">
             <label asp-for="WeddingStreetAddress"></label>
             <input type="text" class="form-control" asp-for="WeddingStreetAddress" placeholder="1234 Memory Lane">
@@ -39,6 +39,9 @@
             <input type="text" class="form-control" asp-for="WeddingCity" placeholder="Chicago">
             <span asp-validation-for="WeddingCity"></span>
         </div>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 4%;">
         <div class="col-sm-5">
             <label asp-for="WeddingState"></label>
             <select type="text" class="form-control" asp-for="WeddingState">
