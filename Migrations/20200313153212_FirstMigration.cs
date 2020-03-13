@@ -32,10 +32,15 @@ namespace WeddingPlanner.Migrations
                 {
                     WeddingId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    WedderOne = table.Column<string>(nullable: false),
-                    WedderTwo = table.Column<string>(nullable: false),
+                    WedderOneFirstName = table.Column<string>(nullable: false),
+                    WedderOneLastName = table.Column<string>(nullable: false),
+                    WedderTwoFirstName = table.Column<string>(nullable: false),
+                    WedderTwoLastName = table.Column<string>(nullable: false),
                     WeddingDate = table.Column<DateTime>(nullable: false),
-                    WeddingAddress = table.Column<string>(nullable: false),
+                    WeddingStreetAddress = table.Column<string>(nullable: false),
+                    WeddingCity = table.Column<string>(nullable: false),
+                    WeddingState = table.Column<string>(nullable: false),
+                    WeddingZipcode = table.Column<string>(nullable: false),
                     UserId = table.Column<int>(nullable: false),
                     Created_At = table.Column<DateTime>(nullable: false),
                     Updated_At = table.Column<DateTime>(nullable: false)

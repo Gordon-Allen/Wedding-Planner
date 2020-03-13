@@ -72,16 +72,31 @@ namespace WeddingPlanner.Migrations
 
                     b.Property<int>("UserId");
 
-                    b.Property<string>("WedderOne")
+                    b.Property<string>("WedderOneFirstName")
                         .IsRequired();
 
-                    b.Property<string>("WedderTwo")
+                    b.Property<string>("WedderOneLastName")
                         .IsRequired();
 
-                    b.Property<string>("WeddingAddress")
+                    b.Property<string>("WedderTwoFirstName")
+                        .IsRequired();
+
+                    b.Property<string>("WedderTwoLastName")
+                        .IsRequired();
+
+                    b.Property<string>("WeddingCity")
                         .IsRequired();
 
                     b.Property<DateTime>("WeddingDate");
+
+                    b.Property<string>("WeddingState")
+                        .IsRequired();
+
+                    b.Property<string>("WeddingStreetAddress")
+                        .IsRequired();
+
+                    b.Property<string>("WeddingZipcode")
+                        .IsRequired();
 
                     b.HasKey("WeddingId");
 
